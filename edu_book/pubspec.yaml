@@ -37,6 +37,7 @@ dependencies:
   switcher_button: ^0.0.4
   provider: ^6.0.2
   shared_preferences: ^2.0.13
+  syncfusion_flutter_pdfviewer: ^20.1.48-beta.1
 
 dev_dependencies:
   flutter_test:
@@ -61,8 +62,10 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/images/
+    - assets/pdfs/grade_one/
+    - assets/pdfs/grade_one/SUNNY_MEADOWS_WOODLAND_SCHOOL.pdf
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -77,9 +80,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: SamsungSans
+    - family: Como
       fonts:
-        - asset: assets/fonts/Precious.ttf
+        - asset: assets/fonts/Como.ttf
         # - asset: assets/fonts/SamsungSans-Bold.ttf
           # weight: 700
   #   - family: Trajan Pro

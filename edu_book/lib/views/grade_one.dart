@@ -15,8 +15,80 @@ class GradeOne extends StatelessWidget {
             onPressed: () => Navigator.pop(context),
           ),
         ),
-        body: const Center(
-          child: Text('GRADE ONE PDFs'),
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Container(
+            padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Grade One E-Books',
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Como'),
+                ),
+                const SizedBox(height: 20),
+                InkWell(
+                    child: SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(21.0),
+                        ),
+                        color: Colors.white70,
+                        elevation: 10,
+                        child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.all(18.0),
+                                child: ConstrainedBox(
+                                  constraints: BoxConstraints(
+                                    maxWidth:
+                                        MediaQuery.of(context).size.width * .28,
+                                    maxHeight:
+                                        MediaQuery.of(context).size.width * .28,
+                                  ),
+                                  child: Image.asset(
+                                      'assets/pdfs/grade_one/SUNNY_MEADOWS_WOODLAND_SCHOOL.jpg',
+                                      fit: BoxFit.fill),
+                                ),
+                              ),
+                              Expanded(
+                                child: Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(0, 18, 18, 18),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: const <Widget>[
+                                      Text(
+                                        'SUNNY MEADOWS WOODLAND SCHOOL',
+                                        style: TextStyle(
+                                            color: Colors.black87,
+                                            fontSize: 28,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'Como'),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ]),
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.pushNamed(context,
+                          '/grade-one/sunny-meadows-woodland-school.pdf');
+                    }),
+              ],
+            ),
+          ),
         ),
       );
 }

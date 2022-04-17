@@ -19,7 +19,15 @@ class NavigationDrawerWidget extends StatelessWidget {
                 padding: padding,
                 child: Column(
                   children: [
-                    const SizedBox(height: 100),
+                    const SizedBox(height: 25),
+                    Container(
+                      height: 100,
+                      decoration: const BoxDecoration(
+                          image: DecorationImage(
+                              image: ExactAssetImage('assets/images/logo.png'),
+                              fit: BoxFit.fitHeight)),
+                    ),
+                    const SizedBox(height: 25),
                     buildMenuItem(
                       text: 'Grade One',
                       icon: Icons.looks_one_outlined,
@@ -101,7 +109,14 @@ class NavigationDrawerWidget extends StatelessWidget {
 
     return ListTile(
       leading: Icon(icon, color: color),
-      title: Text(text, style: TextStyle(color: color, fontSize: 18)),
+      title: Text(
+        text,
+        style: TextStyle(
+          color: color,
+          fontSize: 18,
+          fontFamily: 'Como',
+        ),
+      ),
       hoverColor: hoverColor,
       onTap: onClicked,
     );
