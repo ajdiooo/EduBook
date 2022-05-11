@@ -6,6 +6,12 @@ import 'package:edu_book/views/grade_six.dart';
 import 'package:edu_book/views/grade_three.dart';
 import 'package:edu_book/views/grade_two.dart';
 import 'package:edu_book/views/homepage.dart';
+import 'package:edu_book/views/pdfs/grade_one/ang_matalik_na_magkaibigan.dart';
+import 'package:edu_book/views/pdfs/grade_one/ida_the_fish.dart';
+import 'package:edu_book/views/pdfs/grade_one/pams_cat.dart';
+import 'package:edu_book/views/pdfs/grade_one/si_idang_isda.dart';
+import 'package:edu_book/views/pdfs/grade_one/si_kala_kalabaw.dart';
+import 'package:edu_book/views/pdfs/grade_one/si_mika_manika.dart';
 import 'package:edu_book/views/pdfs/grade_one/sunny_meadows_woodland_school.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -28,7 +34,7 @@ class MyApp extends StatelessWidget {
             title: "TEST",
             theme: themeModal.darkMode ? ThemeData.dark() : ThemeData.light(),
             // home: Homepage(),
-            initialRoute: '/',
+            initialRoute: '/grade-one',
             routes: {
               '/': (context) => const Homepage(),
 
@@ -43,8 +49,26 @@ class MyApp extends StatelessWidget {
               // specific pdfs
 
               // grade one
-              '/grade-one/sunny-meadows-woodland-school.pdf': (context) =>
-                  const SunnyMeadowsWoodlandSchool(),
+              '/grade-one/ang-matalik-na-magkaibigan.pdf': (context) =>
+                  const AngMatalikNaMagkaibigan(
+                    title: 'Ang Matalik na Magkaibigan',
+                  ),
+              '/grade-one/ida-the-fish.pdf': (context) => const IdaTheFish(
+                    title: 'Ida the Fish',
+                  ),
+              '/grade-one/pam\'s-cat.pdf': (context) => const PamsCat(
+                    title: 'Pam\'s Cat',
+                  ),
+              '/grade-one/si-idang-isda.pdf': (context) => const SiIdangIsda(
+                    title: 'Si Idang Isda',
+                  ),
+              '/grade-one/si-kala-kalabaw.pdf': (context) =>
+                  const SiKalaKalabaw(
+                    title: 'Si Kala Kalabaw',
+                  ),
+              '/grade-one/si-mika-manika.pdf': (context) => const SiMikaManika(
+                    title: 'Si Mika Manika',
+                  ),
             },
           );
         }));

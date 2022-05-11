@@ -8,18 +8,15 @@ import 'package:edu_book/misc/load_file_on_ram.dart';
 import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-class SunnyMeadowsWoodlandSchool extends StatefulWidget {
+class IdaTheFish extends StatefulWidget {
   final String title;
-  const SunnyMeadowsWoodlandSchool({Key? key, required this.title})
-      : super(key: key);
+  const IdaTheFish({Key? key, required this.title}) : super(key: key);
 
   @override
-  State<SunnyMeadowsWoodlandSchool> createState() =>
-      _SunnyMeadowsWoodlandSchoolState();
+  State<IdaTheFish> createState() => _IdaTheFishState();
 }
 
-class _SunnyMeadowsWoodlandSchoolState extends State<SunnyMeadowsWoodlandSchool>
-    with WidgetsBindingObserver {
+class _IdaTheFishState extends State<IdaTheFish> with WidgetsBindingObserver {
   File? file;
   var pdfViewerKey = UniqueKey();
   PDFViewController? pdfViewController;
@@ -28,7 +25,7 @@ class _SunnyMeadowsWoodlandSchoolState extends State<SunnyMeadowsWoodlandSchool>
   void loadPdf() async {
     // pdfFlePath = await downloadAndSavePdf();
     File file = await LoadFileOnRam.createFileFromAssets(
-        'assets/pdfs/grade_one/SUNNY_MEADOWS_WOODLAND_SCHOOL.pdf');
+        'assets/pdfs/grade_one/IDA_THE_FISH.pdf');
     setState(() {
       this.file = file;
     });
@@ -100,8 +97,8 @@ class _SunnyMeadowsWoodlandSchoolState extends State<SunnyMeadowsWoodlandSchool>
             Factory<OneSequenceGestureRecognizer>(
                 () => EagerGestureRecognizer())
           },
-        ).fromAsset('assets/pdfs/grade_one/SUNNY_MEADOWS_WOODLAND_SCHOOL.pdf',
-            key: pdfViewerKey, errorWidget: (error) {
+        ).fromAsset('assets/pdfs/grade_one/IDA_THE_FISH.pdf', key: pdfViewerKey,
+            errorWidget: (error) {
           print(error);
           return Center(child: Text('error $error'));
         }),

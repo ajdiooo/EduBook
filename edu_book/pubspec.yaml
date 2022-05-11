@@ -37,7 +37,10 @@ dependencies:
   switcher_button: ^0.0.4
   provider: ^6.0.2
   shared_preferences: ^2.0.13
+  fluttertoast: ^8.0.9
   syncfusion_flutter_pdfviewer: ^20.1.48-beta.1
+  flutter_cached_pdfview: ^0.4.1
+  path_provider: ^2.0.8
 
 dev_dependencies:
   flutter_test:
@@ -62,11 +65,13 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
+  # assets:
+  #   - images/a_dot_burr.jpeg
+  #   - images/a_dot_ham.jpeg
+
   assets:
     - assets/images/
     - assets/pdfs/grade_one/
-    - assets/pdfs/grade_one/SUNNY_MEADOWS_WOODLAND_SCHOOL.pdf
-  #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -79,17 +84,21 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  fonts:
-    - family: Como
-      fonts:
-        - asset: assets/fonts/Como.ttf
-        # - asset: assets/fonts/SamsungSans-Bold.ttf
-          # weight: 700
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
   #   - family: Trajan Pro
-      # fonts:
+  #     fonts:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
+  fonts:
+    - family: Como
+      fonts:
+        - asset: assets/fonts/Como.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
