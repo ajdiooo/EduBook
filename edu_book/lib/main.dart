@@ -1,3 +1,4 @@
+import 'package:edu_book/misc/splash_screen.dart';
 import 'package:edu_book/theme/theme_modal.dart';
 import 'package:edu_book/views/grade_five.dart';
 import 'package:edu_book/views/grade_four.dart';
@@ -5,24 +6,28 @@ import 'package:edu_book/views/grade_one.dart';
 import 'package:edu_book/views/grade_six.dart';
 import 'package:edu_book/views/grade_three.dart';
 import 'package:edu_book/views/grade_two.dart';
-import 'package:edu_book/views/homepage.dart';
+// import 'package:edu_book/views/homepage.dart';
 import 'package:edu_book/views/pdfs/grade_one/ang_matalik_na_magkaibigan.dart';
 import 'package:edu_book/views/pdfs/grade_one/ida_the_fish.dart';
 import 'package:edu_book/views/pdfs/grade_one/pams_cat.dart';
 import 'package:edu_book/views/pdfs/grade_one/si_idang_isda.dart';
 import 'package:edu_book/views/pdfs/grade_one/si_kala_kalabaw.dart';
 import 'package:edu_book/views/pdfs/grade_one/si_mika_manika.dart';
-import 'package:edu_book/views/pdfs/grade_one/sunny_meadows_woodland_school.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const EduBook());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class EduBook extends StatefulWidget {
+  const EduBook({Key? key}) : super(key: key);
 
+  @override
+  State<EduBook> createState() => _EduBookState();
+}
+
+class _EduBookState extends State<EduBook> {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -34,9 +39,9 @@ class MyApp extends StatelessWidget {
             title: "TEST",
             theme: themeModal.darkMode ? ThemeData.dark() : ThemeData.light(),
             // home: Homepage(),
-            initialRoute: '/grade-one',
+            initialRoute: '/',
             routes: {
-              '/': (context) => const Homepage(),
+              '/': (context) => const SplashScreen(),
 
               // list of pdfs per grade
               '/grade-one': (context) => const GradeOne(),
