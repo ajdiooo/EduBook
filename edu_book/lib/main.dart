@@ -72,7 +72,7 @@ class _EduBookState extends State<EduBook> {
                     title: 'Si Kala Kalabaw',
                   ),
               '/grade-one/si-mika-manika.pdf': (context) => const SiMikaManika(
-                    title: 'Si Mika Manika',
+                  title: 'Si Mika Manika',
                   ),
             },
           );

@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 
 import 'package:edu_book/misc/load_file_on_ram.dart';
 import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class AngMatalikNaMagkaibigan extends StatefulWidget {
   final String title;
@@ -77,21 +76,15 @@ class _AngMatalikNaMagkaibiganState extends State<AngMatalikNaMagkaibigan>
       body: GestureDetector(
         onTap: () => print('tap'),
         child: PDF(
+          fitPolicy: FitPolicy.BOTH,
           enableSwipe: true,
           swipeHorizontal: true,
+          pageFling: false,
           onError: (error) {
             print('error $error');
           },
           onPageChanged: (int? page, int? totalPages) {
             print('current page ${page! + 1} of $totalPages');
-            Fluttertoast.showToast(
-                msg: 'Page  ${page + 1} of $totalPages',
-                toastLength: Toast.LENGTH_SHORT,
-                gravity: ToastGravity.BOTTOM,
-                timeInSecForIosWeb: 1,
-                backgroundColor: Colors.white54,
-                textColor: Colors.black54,
-                fontSize: 16.0);
           },
           onViewCreated: (PDFViewController controller) {
             pdfViewController = controller;

@@ -12,7 +12,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     //set time to load the new page
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(Duration(seconds: 5), () {
       Navigator.pushNamed(context, '/grade-one');
     });
     super.initState();
@@ -32,10 +32,12 @@ class _SplashScreenState extends State<SplashScreen> {
                 height: 300,
                 width: 300,
                 child: Lottie.asset('assets/lottie/school-books.json')),
-            SizedBox(height: 20),
-            Text(
-              "Dodo",
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            const Text(
+              "EduBook",
+              style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Como'),
             ),
           ],
         ),
