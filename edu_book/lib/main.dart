@@ -6,13 +6,14 @@ import 'package:edu_book/views/grade_one.dart';
 import 'package:edu_book/views/grade_six.dart';
 import 'package:edu_book/views/grade_three.dart';
 import 'package:edu_book/views/grade_two.dart';
+import 'package:edu_book/views/homepage.dart';
 // import 'package:edu_book/views/homepage.dart';
-import 'package:edu_book/views/pdfs/grade_one/ang_matalik_na_magkaibigan.dart';
-import 'package:edu_book/views/pdfs/grade_one/ida_the_fish.dart';
-import 'package:edu_book/views/pdfs/grade_one/pams_cat.dart';
-import 'package:edu_book/views/pdfs/grade_one/si_idang_isda.dart';
-import 'package:edu_book/views/pdfs/grade_one/si_kala_kalabaw.dart';
-import 'package:edu_book/views/pdfs/grade_one/si_mika_manika.dart';
+import 'package:edu_book/views/pdfs/homepage/ang_matalik_na_magkaibigan.dart';
+import 'package:edu_book/views/pdfs/homepage/ida_the_fish.dart';
+import 'package:edu_book/views/pdfs/homepage/pams_cat.dart';
+import 'package:edu_book/views/pdfs/homepage/si_idang_isda.dart';
+import 'package:edu_book/views/pdfs/homepage/si_kala_kalabaw.dart';
+import 'package:edu_book/views/pdfs/homepage/si_mika_manika.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -42,6 +43,7 @@ class _EduBookState extends State<EduBook> {
             initialRoute: '/',
             routes: {
               '/': (context) => const SplashScreen(),
+              '/homepage': (context) => const Homepage(),              
 
               // list of pdfs per grade
               '/grade-one': (context) => const GradeOne(),
@@ -54,25 +56,25 @@ class _EduBookState extends State<EduBook> {
               // specific pdfs
 
               // grade one
-              '/grade-one/ang-matalik-na-magkaibigan.pdf': (context) =>
+              '/homepage/ang-matalik-na-magkaibigan.pdf': (context) =>
                   const AngMatalikNaMagkaibigan(
                     title: 'Ang Matalik na Magkaibigan',
                   ),
-              '/grade-one/ida-the-fish.pdf': (context) => const IdaTheFish(
+              '/homepage/ida-the-fish.pdf': (context) => const IdaTheFish(
                     title: 'Ida the Fish',
                   ),
-              '/grade-one/pam\'s-cat.pdf': (context) => const PamsCat(
+              '/homepage/pam\'s-cat.pdf': (context) => const PamsCat(
                     title: 'Pam\'s Cat',
                   ),
-              '/grade-one/si-idang-isda.pdf': (context) => const SiIdangIsda(
+              '/homepage/si-idang-isda.pdf': (context) => const SiIdangIsda(
                     title: 'Si Idang Isda',
                   ),
-              '/grade-one/si-kala-kalabaw.pdf': (context) =>
+              '/homepage/si-kala-kalabaw.pdf': (context) =>
                   const SiKalaKalabaw(
                     title: 'Si Kala Kalabaw',
                   ),
-              '/grade-one/si-mika-manika.pdf': (context) => const SiMikaManika(
-                  title: 'Si Mika Manika',
+              '/homepage/si-mika-manika.pdf': (context) => const SiMikaManika(
+                    title: 'Si Mika Manika',
                   ),
             },
           );

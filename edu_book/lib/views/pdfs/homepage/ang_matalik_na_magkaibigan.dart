@@ -7,15 +7,18 @@ import 'package:flutter/material.dart';
 import 'package:edu_book/misc/load_file_on_ram.dart';
 import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart';
 
-class PamsCat extends StatefulWidget {
+class AngMatalikNaMagkaibigan extends StatefulWidget {
   final String title;
-  const PamsCat({Key? key, required this.title}) : super(key: key);
+  const AngMatalikNaMagkaibigan({Key? key, required this.title})
+      : super(key: key);
 
   @override
-  State<PamsCat> createState() => _PamsCatState();
+  State<AngMatalikNaMagkaibigan> createState() =>
+      _AngMatalikNaMagkaibiganState();
 }
 
-class _PamsCatState extends State<PamsCat> with WidgetsBindingObserver {
+class _AngMatalikNaMagkaibiganState extends State<AngMatalikNaMagkaibigan>
+    with WidgetsBindingObserver {
   File? file;
   var pdfViewerKey = UniqueKey();
   PDFViewController? pdfViewController;
@@ -24,7 +27,7 @@ class _PamsCatState extends State<PamsCat> with WidgetsBindingObserver {
   void loadPdf() async {
     // pdfFlePath = await downloadAndSavePdf();
     File file = await LoadFileOnRam.createFileFromAssets(
-        'assets/pdfs/grade_one/PAMS_CAT.pdf');
+        'assets/pdfs/grade_one/ANG_MATALIK_NA_MAGKAIBIGAN.pdf');
     setState(() {
       this.file = file;
     });
@@ -34,12 +37,12 @@ class _PamsCatState extends State<PamsCat> with WidgetsBindingObserver {
   void initState() {
     super.initState();
     loadPdf();
-    WidgetsBinding.instance!.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
   }
 
   @override
   void dispose() {
-    WidgetsBinding.instance!.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
 
@@ -90,8 +93,8 @@ class _PamsCatState extends State<PamsCat> with WidgetsBindingObserver {
             Factory<OneSequenceGestureRecognizer>(
                 () => EagerGestureRecognizer())
           },
-        ).fromAsset('assets/pdfs/grade_one/PAMS_CAT.pdf', key: pdfViewerKey,
-            errorWidget: (error) {
+        ).fromAsset('assets/pdfs/grade_one/ANG_MATALIK_NA_MAGKAIBIGAN.pdf',
+            key: pdfViewerKey, errorWidget: (error) {
           print(error);
           return Center(child: Text('error $error'));
         }),

@@ -13,7 +13,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     //set time to load the new page
     Future.delayed(Duration(seconds: 5), () {
-      Navigator.pushNamed(context, '/grade-one');
+      Navigator.pushNamed(context, '/homepage');
     });
     super.initState();
   }
@@ -23,6 +23,8 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Container(
+        // width: MediaQuery.of(context).size.width,
+        // height: MediaQuery.of(context).size.height,
         alignment: Alignment.center,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -31,12 +33,13 @@ class _SplashScreenState extends State<SplashScreen> {
             SizedBox(
                 height: 300,
                 width: 300,
-                child: Lottie.asset('assets/lottie/school-books.json')),
+                child: Lottie.asset('assets/lottie/splash-logo.json')),
             const Text(
               "EduBook",
               style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
+                  color: Colors.black,
                   fontFamily: 'Como'),
             ),
           ],

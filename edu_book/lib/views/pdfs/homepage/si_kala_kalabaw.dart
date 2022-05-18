@@ -7,15 +7,16 @@ import 'package:flutter/material.dart';
 import 'package:edu_book/misc/load_file_on_ram.dart';
 import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart';
 
-class SiIdangIsda extends StatefulWidget {
+class SiKalaKalabaw extends StatefulWidget {
   final String title;
-  const SiIdangIsda({Key? key, required this.title}) : super(key: key);
+  const SiKalaKalabaw({Key? key, required this.title}) : super(key: key);
 
   @override
-  State<SiIdangIsda> createState() => _SiIdangIsdaState();
+  State<SiKalaKalabaw> createState() => _SiKalaKalabawState();
 }
 
-class _SiIdangIsdaState extends State<SiIdangIsda> with WidgetsBindingObserver {
+class _SiKalaKalabawState extends State<SiKalaKalabaw>
+    with WidgetsBindingObserver {
   File? file;
   var pdfViewerKey = UniqueKey();
   PDFViewController? pdfViewController;
@@ -24,7 +25,7 @@ class _SiIdangIsdaState extends State<SiIdangIsda> with WidgetsBindingObserver {
   void loadPdf() async {
     // pdfFlePath = await downloadAndSavePdf();
     File file = await LoadFileOnRam.createFileFromAssets(
-        'assets/pdfs/grade_one/SI_IDANG_ISDA.pdf');
+        'assets/pdfs/grade_one/SI_KALA_KALABAW.pdf');
     setState(() {
       this.file = file;
     });
@@ -34,12 +35,12 @@ class _SiIdangIsdaState extends State<SiIdangIsda> with WidgetsBindingObserver {
   void initState() {
     super.initState();
     loadPdf();
-    WidgetsBinding.instance!.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
   }
 
   @override
   void dispose() {
-    WidgetsBinding.instance!.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
 
@@ -90,7 +91,7 @@ class _SiIdangIsdaState extends State<SiIdangIsda> with WidgetsBindingObserver {
             Factory<OneSequenceGestureRecognizer>(
                 () => EagerGestureRecognizer())
           },
-        ).fromAsset('assets/pdfs/grade_one/SI_IDANG_ISDA.pdf',
+        ).fromAsset('assets/pdfs/grade_one/SI_KALA_KALABAW.pdf',
             key: pdfViewerKey, errorWidget: (error) {
           print(error);
           return Center(child: Text('error $error'));

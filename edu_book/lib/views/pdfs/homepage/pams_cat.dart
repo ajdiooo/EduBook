@@ -7,16 +7,15 @@ import 'package:flutter/material.dart';
 import 'package:edu_book/misc/load_file_on_ram.dart';
 import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart';
 
-class SiKalaKalabaw extends StatefulWidget {
+class PamsCat extends StatefulWidget {
   final String title;
-  const SiKalaKalabaw({Key? key, required this.title}) : super(key: key);
+  const PamsCat({Key? key, required this.title}) : super(key: key);
 
   @override
-  State<SiKalaKalabaw> createState() => _SiKalaKalabawState();
+  State<PamsCat> createState() => _PamsCatState();
 }
 
-class _SiKalaKalabawState extends State<SiKalaKalabaw>
-    with WidgetsBindingObserver {
+class _PamsCatState extends State<PamsCat> with WidgetsBindingObserver {
   File? file;
   var pdfViewerKey = UniqueKey();
   PDFViewController? pdfViewController;
@@ -25,7 +24,7 @@ class _SiKalaKalabawState extends State<SiKalaKalabaw>
   void loadPdf() async {
     // pdfFlePath = await downloadAndSavePdf();
     File file = await LoadFileOnRam.createFileFromAssets(
-        'assets/pdfs/grade_one/SI_KALA_KALABAW.pdf');
+        'assets/pdfs/grade_one/PAMS_CAT.pdf');
     setState(() {
       this.file = file;
     });
@@ -35,12 +34,12 @@ class _SiKalaKalabawState extends State<SiKalaKalabaw>
   void initState() {
     super.initState();
     loadPdf();
-    WidgetsBinding.instance!.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
   }
 
   @override
   void dispose() {
-    WidgetsBinding.instance!.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
 
@@ -91,8 +90,8 @@ class _SiKalaKalabawState extends State<SiKalaKalabaw>
             Factory<OneSequenceGestureRecognizer>(
                 () => EagerGestureRecognizer())
           },
-        ).fromAsset('assets/pdfs/grade_one/SI_KALA_KALABAW.pdf',
-            key: pdfViewerKey, errorWidget: (error) {
+        ).fromAsset('assets/pdfs/grade_one/PAMS_CAT.pdf', key: pdfViewerKey,
+            errorWidget: (error) {
           print(error);
           return Center(child: Text('error $error'));
         }),
