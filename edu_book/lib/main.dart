@@ -43,7 +43,7 @@ class _EduBookState extends State<EduBook> {
             initialRoute: '/',
             routes: {
               '/': (context) => const SplashScreen(),
-              '/homepage': (context) => const Homepage(),              
+              '/homepage': (context) => const Homepage(),
 
               // list of pdfs per grade
               '/grade-one': (context) => const GradeOne(),
@@ -57,24 +57,30 @@ class _EduBookState extends State<EduBook> {
 
               // grade one
               '/homepage/ang-matalik-na-magkaibigan.pdf': (context) =>
-                  const AngMatalikNaMagkaibigan(
-                    title: 'Ang Matalik na Magkaibigan',
+                  AngMatalikNaMagkaibigan(
+                    pdfAssetPath:
+                        'assets/pdfs/grade_one/ANG_MATALIK_NA_MAGKAIBIGAN.pdf',
+                    // title: 'Ang Matalik na Magkaibigan',
                   ),
-              '/homepage/ida-the-fish.pdf': (context) => const IdaTheFish(
-                    title: 'Ida the Fish',
+              '/homepage/ida-the-fish.pdf': (context) => IdaTheFish(
+                    pdfAssetPath: 'assets/pdfs/grade_one/IDA_THE_FISH.pdf',
+                    // title: 'Ida the Fish',
                   ),
-              '/homepage/pam\'s-cat.pdf': (context) => const PamsCat(
-                    title: 'Pam\'s Cat',
+              '/homepage/pam\'s-cat.pdf': (context) => PamsCat(
+                    pdfAssetPath: 'assets/pdfs/grade_one/PAMS_CAT.pdf',
+                    // title: 'Pam\'s Cat',
                   ),
-              '/homepage/si-idang-isda.pdf': (context) => const SiIdangIsda(
-                    title: 'Si Idang Isda',
+              '/homepage/si-idang-isda.pdf': (context) => SiIdangIsda(
+                    pdfAssetPath: 'assets/pdfs/grade_one/SI_IDANG_ISDA.pdf',
+                    // title: 'Si Idang Isda',
                   ),
-              '/homepage/si-kala-kalabaw.pdf': (context) =>
-                  const SiKalaKalabaw(
-                    title: 'Si Kala Kalabaw',
+              '/homepage/si-kala-kalabaw.pdf': (context) => SiKalaKalabaw(
+                    pdfAssetPath: 'assets/pdfs/grade_one/SI_KALA_KALABAW.pdf',
+                    // title: 'Si Kala Kalabaw',
                   ),
-              '/homepage/si-mika-manika.pdf': (context) => const SiMikaManika(
-                    title: 'Si Mika Manika',
+              '/homepage/si-mika-manika.pdf': (context) => SiMikaManika(
+                    pdfAssetPath: 'assets/pdfs/grade_one/SI_MIKA_MANIKA.pdf',
+                    // title: 'Si Mika Manika',
                   ),
             },
           );
