@@ -54,7 +54,7 @@ class NavigationDrawerWidget extends StatelessWidget {
                     const SizedBox(height: 25),
                     buildMenuItem(
                       text: 'Homepage',
-                      icon: Icons.looks_one_outlined,
+                      icon: Icons.home,
                       onClicked: () => selectedItem(context, 0),
                     ),
                     buildMenuItem(
